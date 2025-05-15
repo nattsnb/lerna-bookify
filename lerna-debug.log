@@ -1,0 +1,11 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '8.2.2',
+0 silly argv   '$0': 'node_modules\\lerna\\dist\\cli.js',
+0 silly argv   name: 'backend'
+0 silly argv }
+1 notice cli v8.2.2
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath C:\Users\anbus\WebstormProjects\lerna-bookify
+4 error TypeError: Cannot read properties of undefined (reading 'name')
+4 error     at CreateCommand.execute (C:\Users\anbus\WebstormProjects\lerna-bookify\node_modules\@lerna\create\dist\command.js:5481:31)
