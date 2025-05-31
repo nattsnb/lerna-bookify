@@ -67,6 +67,6 @@ export class VenueController {
 
   @Head()
   headRoute(@Res() response: Response) {
-    return response.status(200).send();
+    return response.status(200).end();
   }
 }
