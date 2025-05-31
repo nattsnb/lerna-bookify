@@ -3,10 +3,52 @@ import { CreateRatingDto } from './dto/create-rating.dto';
 export declare class RatingService {
   private readonly prismaService;
   constructor(prismaService: PrismaService);
-  getAll(): Promise<any>;
-  create(createRatingData: CreateRatingDto): Promise<any>;
-  getOne(ratingId: number): Promise<any>;
-  getByVenue(venueId: number): Promise<any>;
-  getByUser(userId: number): Promise<any>;
-  delete(ratingId: number): Promise<any>;
+  getAll(): Promise<
+    {
+      id: number;
+      score: number;
+      review: string | null;
+      reservationId: number;
+      createdAt: Date;
+    }[]
+  >;
+  create(createRatingData: CreateRatingDto): Promise<{
+    id: number;
+    score: number;
+    review: string | null;
+    reservationId: number;
+    createdAt: Date;
+  }>;
+  getOne(ratingId: number): Promise<{
+    id: number;
+    score: number;
+    review: string | null;
+    reservationId: number;
+    createdAt: Date;
+  }>;
+  getByVenue(venueId: number): Promise<
+    {
+      id: number;
+      score: number;
+      review: string | null;
+      reservationId: number;
+      createdAt: Date;
+    }[]
+  >;
+  getByUser(userId: number): Promise<
+    {
+      id: number;
+      score: number;
+      review: string | null;
+      reservationId: number;
+      createdAt: Date;
+    }[]
+  >;
+  delete(ratingId: number): Promise<{
+    id: number;
+    score: number;
+    review: string | null;
+    reservationId: number;
+    createdAt: Date;
+  }>;
 }

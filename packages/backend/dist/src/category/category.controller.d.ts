@@ -4,9 +4,29 @@ import { CreateCategoryDto } from './dto/create-category.dto';
 export declare class CategoryController {
   private readonly occasionService;
   constructor(occasionService: CategoryService);
-  getAll(): Promise<any>;
-  create(createOccasionData: CreateCategoryDto): Promise<any>;
-  getOne(id: number): Promise<any>;
-  update(id: number, updateOccasionData: UpdateCategoryDto): Promise<any>;
-  delete(id: number): Promise<any>;
+  getAll(): Promise<
+    {
+      name: string;
+      id: number;
+    }[]
+  >;
+  create(createOccasionData: CreateCategoryDto): Promise<{
+    name: string;
+    id: number;
+  }>;
+  getOne(id: number): Promise<{
+    name: string;
+    id: number;
+  }>;
+  update(
+    id: number,
+    updateOccasionData: UpdateCategoryDto,
+  ): Promise<{
+    name: string;
+    id: number;
+  }>;
+  delete(id: number): Promise<{
+    name: string;
+    id: number;
+  }>;
 }

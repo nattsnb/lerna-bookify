@@ -4,10 +4,43 @@ import { CreateFavouriteDto } from './dto/create-favourite.dto';
 export declare class FavouriteController {
   private readonly favouriteService;
   constructor(favouriteService: FavouriteService);
-  getAll(): Promise<any>;
-  getByUser(id: number): Promise<any>;
-  getByVenue(id: number): Promise<any>;
-  getOne(id: number): Promise<any>;
-  create(dto: CreateFavouriteDto, request: RequestWithUser): Promise<any>;
-  delete(id: number): Promise<any>;
+  getAll(): Promise<
+    {
+      id: number;
+      venueId: number;
+      userId: number;
+    }[]
+  >;
+  getByUser(id: number): Promise<
+    {
+      id: number;
+      venueId: number;
+      userId: number;
+    }[]
+  >;
+  getByVenue(id: number): Promise<
+    {
+      id: number;
+      venueId: number;
+      userId: number;
+    }[]
+  >;
+  getOne(id: number): Promise<{
+    id: number;
+    venueId: number;
+    userId: number;
+  }>;
+  create(
+    dto: CreateFavouriteDto,
+    request: RequestWithUser,
+  ): Promise<{
+    id: number;
+    venueId: number;
+    userId: number;
+  }>;
+  delete(id: number): Promise<{
+    id: number;
+    venueId: number;
+    userId: number;
+  }>;
 }

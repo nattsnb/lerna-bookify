@@ -4,12 +4,29 @@ import { UpdateCategoryDto } from './dto/update-category.dto';
 export declare class CategoryService {
   private readonly prismaService;
   constructor(prismaService: PrismaService);
-  getAll(): Promise<any>;
-  create(createCategoryData: CreateCategoryDto): Promise<any>;
-  getOne(categoryId: number): Promise<any>;
+  getAll(): Promise<
+    {
+      name: string;
+      id: number;
+    }[]
+  >;
+  create(createCategoryData: CreateCategoryDto): Promise<{
+    name: string;
+    id: number;
+  }>;
+  getOne(categoryId: number): Promise<{
+    name: string;
+    id: number;
+  }>;
   update(
     categoryId: number,
     updateCategoryData: UpdateCategoryDto,
-  ): Promise<any>;
-  delete(categoryId: number): Promise<any>;
+  ): Promise<{
+    name: string;
+    id: number;
+  }>;
+  delete(categoryId: number): Promise<{
+    name: string;
+    id: number;
+  }>;
 }

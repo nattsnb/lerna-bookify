@@ -6,8 +6,29 @@ import { RequestWithUser } from './request-with-user';
 export declare class AuthenticationController {
   private readonly authenticationService;
   constructor(authenticationService: AuthenticationService);
-  signUp(signUpData: SignUpDto): Promise<any>;
-  logIn(logInData: LogInDto, response: Response): Promise<any>;
+  signUp(signUpData: SignUpDto): Promise<{
+    email: string;
+    name: string;
+    password: string;
+    phoneNumber: string;
+    id: number;
+  }>;
+  logIn(
+    logInData: LogInDto,
+    response: Response,
+  ): Promise<{
+    email: string;
+    name: string;
+    password: string;
+    phoneNumber: string;
+    id: number;
+  }>;
   logOut(response: Response): void;
-  authenticate(request: RequestWithUser): User;
+  authenticate(request: RequestWithUser): {
+    email: string;
+    name: string;
+    password: string;
+    phoneNumber: string;
+    id: number;
+  };
 }

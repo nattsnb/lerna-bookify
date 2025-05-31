@@ -13,6 +13,12 @@ export declare class JwtStrategy extends JwtStrategy_base {
   private readonly configService;
   private readonly userService;
   constructor(configService: ConfigService, userService: UserService);
-  validate(payload: TokenPayload): Promise<any>;
+  validate(payload: TokenPayload): Promise<{
+    email: string;
+    name: string;
+    password: string;
+    phoneNumber: string;
+    id: number;
+  }>;
 }
 export {};

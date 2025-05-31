@@ -3,16 +3,71 @@ import { CreateReservationDto } from './dto/create-reservation.dto';
 export declare class ReservationService {
   private readonly prismaService;
   constructor(prismaService: PrismaService);
-  getAll(): Promise<any>;
+  getAll(): Promise<
+    {
+      id: number;
+      venueId: number;
+      userId: number;
+      dateStart: Date;
+      dateEnd: Date;
+      isActive: boolean;
+    }[]
+  >;
   create(
     createReservationData: CreateReservationDto,
     userId: number,
-  ): Promise<any>;
-  getOne(reservationId: number): Promise<any>;
-  getByVenue(venueId: number): Promise<any>;
-  getByUser(userId: number): Promise<any>;
-  delete(reservationId: number): Promise<any>;
-  changeIsActive(reservationId: number): Promise<any>;
+  ): Promise<{
+    id: number;
+    venueId: number;
+    userId: number;
+    dateStart: Date;
+    dateEnd: Date;
+    isActive: boolean;
+  }>;
+  getOne(reservationId: number): Promise<{
+    id: number;
+    venueId: number;
+    userId: number;
+    dateStart: Date;
+    dateEnd: Date;
+    isActive: boolean;
+  }>;
+  getByVenue(venueId: number): Promise<
+    {
+      id: number;
+      venueId: number;
+      userId: number;
+      dateStart: Date;
+      dateEnd: Date;
+      isActive: boolean;
+    }[]
+  >;
+  getByUser(userId: number): Promise<
+    {
+      id: number;
+      venueId: number;
+      userId: number;
+      dateStart: Date;
+      dateEnd: Date;
+      isActive: boolean;
+    }[]
+  >;
+  delete(reservationId: number): Promise<{
+    id: number;
+    venueId: number;
+    userId: number;
+    dateStart: Date;
+    dateEnd: Date;
+    isActive: boolean;
+  }>;
+  changeIsActive(reservationId: number): Promise<{
+    id: number;
+    venueId: number;
+    userId: number;
+    dateStart: Date;
+    dateEnd: Date;
+    isActive: boolean;
+  }>;
   checkAvailability(
     venueId: number,
     dateStart: Date,

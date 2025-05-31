@@ -4,9 +4,34 @@ import { CreateAmenityDto } from './dto/create-amenity.dto';
 export declare class AmenityController {
   private readonly amenityService;
   constructor(amenityService: AmenityService);
-  getAll(): Promise<any>;
-  create(createAmenityData: CreateAmenityDto): Promise<any>;
-  getOne(id: number): Promise<any>;
-  update(id: number, updateAmenityData: UpdateAmenityDto): Promise<any>;
-  delete(id: number): Promise<any>;
+  getAll(): Promise<
+    {
+      name: string;
+      id: number;
+      categoryId: number;
+    }[]
+  >;
+  create(createAmenityData: CreateAmenityDto): Promise<{
+    name: string;
+    id: number;
+    categoryId: number;
+  }>;
+  getOne(id: number): Promise<{
+    name: string;
+    id: number;
+    categoryId: number;
+  }>;
+  update(
+    id: number,
+    updateAmenityData: UpdateAmenityDto,
+  ): Promise<{
+    name: string;
+    id: number;
+    categoryId: number;
+  }>;
+  delete(id: number): Promise<{
+    name: string;
+    id: number;
+    categoryId: number;
+  }>;
 }
