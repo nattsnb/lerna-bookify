@@ -1,4 +1,4 @@
 export declare class CreateOccasionDto {
-  name: string;
-  amenities: number[];
+    name: string;
+    amenities: number[];
 }

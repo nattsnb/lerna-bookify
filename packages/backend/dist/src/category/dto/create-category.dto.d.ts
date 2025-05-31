@@ -1,4 +1,4 @@
 export declare class CreateCategoryDto {
-  name: string;
-  amenitiesIds?: number[];
+    name: string;
+    amenitiesIds?: number[];
 }

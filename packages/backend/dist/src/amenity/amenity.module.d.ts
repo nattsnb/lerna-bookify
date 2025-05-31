@@ -1,1 +1,2 @@
-export declare class AmenityModule {}
+export declare class AmenityModule {
+}

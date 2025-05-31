@@ -1,4 +1,4 @@
 export declare class VenueFilterDto {
-  amenities?: number[];
-  occasions?: number[];
+    amenities?: number[];
+    occasions?: number[];
 }

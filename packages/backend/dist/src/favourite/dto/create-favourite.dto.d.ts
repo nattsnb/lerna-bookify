@@ -1,3 +1,3 @@
 export declare class CreateFavouriteDto {
-  venueId: number;
+    venueId: number;
 }

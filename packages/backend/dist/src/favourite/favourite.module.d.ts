@@ -1,1 +1,2 @@
-export declare class FavouriteModule {}
+export declare class FavouriteModule {
+}

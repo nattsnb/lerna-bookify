@@ -1,1 +1,2 @@
-export declare class OccasionModule {}
+export declare class OccasionModule {
+}

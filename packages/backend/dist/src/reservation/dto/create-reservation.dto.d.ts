@@ -1,5 +1,5 @@
 export declare class CreateReservationDto {
-  venueId: number;
-  dateStart: Date;
-  dateEnd: Date;
+    venueId: number;
+    dateStart: Date;
+    dateEnd: Date;
 }

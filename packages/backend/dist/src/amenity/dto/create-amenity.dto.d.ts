@@ -1,4 +1,4 @@
 export declare class CreateAmenityDto {
-  name: string;
-  categoryId: number;
+    name: string;
+    categoryId: number;
 }
