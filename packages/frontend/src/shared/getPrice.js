@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { api } from "./api.js";
 import { ErrorContext } from "../App.jsx";
 
 export function usePriceInPLNData(pricePerNightInEURCent) {

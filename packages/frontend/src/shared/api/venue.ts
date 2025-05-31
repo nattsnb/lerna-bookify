@@ -67,6 +67,12 @@ const checkServerStatus = () => {
   }).catch((err) => console.error("Server check failed:", err));
 };
 
+const getHead = () => {
+  return fetch(`${API_URL}/venue`, {
+    method: "HEAD",
+  }).catch((err) => console.error("Error in getHead:", err));
+};
+
 export const venueApi = {
   getAllVenues,
   getVenueById,
@@ -75,4 +81,5 @@ export const venueApi = {
   updateVenue,
   deleteVenue,
   checkServerStatus,
+  getHead,
 };

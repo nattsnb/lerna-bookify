@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { api } from "../../shared/api.js";
 import { ErrorContext } from "../../App.jsx";
 
 export const useVenue = (venueId) => {

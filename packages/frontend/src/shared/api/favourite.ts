@@ -1,73 +1,46 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
-const getAll = async () => {
-  try {
-    const res = await fetch(`${API_URL}/favourite`, {
-      method: "GET",
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching favourites:", error);
-  }
+const getAll = () => {
+  return fetch(`${API_URL}/favourite`, { method: "GET" })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error fetching favourites:", err));
 };
 
-const getByUser = async (userId) => {
-  try {
-    const res = await fetch(`${API_URL}/favourite/user/${userId}`, {
-      method: "GET",
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching favourites by user:", error);
-  }
+const getByUser = (userId) => {
+  return fetch(`${API_URL}/favourite/user/${userId}`, { method: "GET" })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error fetching favourites by user:", err));
 };
 
-const getByVenue = async (venueId) => {
-  try {
-    const res = await fetch(`${API_URL}/favourite/venue/${venueId}`, {
-      method: "GET",
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching favourites by venue:", error);
-  }
+const getByVenue = (venueId) => {
+  return fetch(`${API_URL}/favourite/venue/${venueId}`, { method: "GET" })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error fetching favourites by venue:", err));
 };
 
-const getOne = async (id) => {
-  try {
-    const res = await fetch(`${API_URL}/favourite/${id}`, {
-      method: "GET",
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching favourite:", error);
-  }
+const getOne = (id) => {
+  return fetch(`${API_URL}/favourite/${id}`, { method: "GET" })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error fetching favourite:", err));
 };
 
-const create = async (venueId, token) => {
-  try {
-    const res = await fetch(`${API_URL}/favourite`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ venueId }),
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error creating favourite:", error);
-  }
+const create = (venueId, token) => {
+  return fetch(`${API_URL}/favourite`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ venueId }),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error creating favourite:", err));
 };
 
-const remove = async (id) => {
-  try {
-    await fetch(`${API_URL}/favourite/${id}`, {
-      method: "DELETE",
-    });
-  } catch (error) {
-    console.error("Error deleting favourite:", error);
-  }
+const remove = (id) => {
+  return fetch(`${API_URL}/favourite/${id}`, { method: "DELETE" })
+    .then(() => {})
+    .catch((err) => console.error("Error deleting favourite:", err));
 };
 
 export const favouriteApi = {

@@ -1,65 +1,43 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
-const getAll = async () => {
-  try {
-    const res = await fetch(`${API_URL}/occasion`, {
-      method: "GET",
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching occasions:", error);
-  }
+const getAll = () => {
+  return fetch(`${API_URL}/occasion`, { method: "GET" })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error fetching occasions:", err));
 };
 
-const getOne = async (id) => {
-  try {
-    const res = await fetch(`${API_URL}/occasion/${id}`, {
-      method: "GET",
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching occasion:", error);
-  }
+const getOne = (id) => {
+  return fetch(`${API_URL}/occasion/${id}`, { method: "GET" })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error fetching occasion:", err));
 };
 
-const create = async (occasionData) => {
-  try {
-    const res = await fetch(`${API_URL}/occasion`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(occasionData),
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error creating occasion:", error);
-  }
+const create = (occasionData) => {
+  return fetch(`${API_URL}/occasion`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(occasionData),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error creating occasion:", err));
 };
 
-const update = async (id, updatedData) => {
-  try {
-    const res = await fetch(`${API_URL}/occasion/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedData),
-    });
-    return await res.json();
-  } catch (error) {
-    console.error("Error updating occasion:", error);
-  }
+const update = (id, updatedData) => {
+  return fetch(`${API_URL}/occasion/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedData),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.error("Error updating occasion:", err));
 };
 
-const remove = async (id) => {
-  try {
-    await fetch(`${API_URL}/occasion/${id}`, {
-      method: "DELETE",
-    });
-  } catch (error) {
-    console.error("Error deleting occasion:", error);
-  }
+const remove = (id) => {
+  return fetch(`${API_URL}/occasion/${id}`, {
+    method: "DELETE",
+  })
+    .then(() => {})
+    .catch((err) => console.error("Error deleting occasion:", err));
 };
 
 export const occasionApi = {

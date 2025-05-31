@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { api } from "../../../shared/api.js";
 import { useMap } from "react-leaflet";
 import "leaflet-fullscreen";
 import "leaflet-fullscreen/dist/leaflet.fullscreen.css";

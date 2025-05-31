@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ErrorContext } from "../../App.jsx";
 import { VerticalContainer } from "../../shared/styledComponents/verticalContainer.styled.js";
 import { CircularProgress, Snackbar } from "@mui/material";
-import { api } from "../../shared/api.js";
+import { venueApi } from "../../shared/api/venue.ts";
 
 export function Layout({ children }) {
   const { isError, setIsError } = useContext(ErrorContext);
@@ -15,8 +15,9 @@ export function Layout({ children }) {
     async function getHead() {
       setIsLoading(true);
       try {
-        const headResponse = await api.getHead();
+        const headResponse = await venueApi.getHead();
         headResponse.ok && setIsServerRunning(true);
+        console.log(headResponse);
       } catch (error) {
         setIsError(true);
         console.error("Error while fetching data:", error);
