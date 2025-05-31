@@ -1,4 +1,4 @@
 export declare enum PrismaError {
-    RecordDoesNotExist = "P2025",
-    UniqueConstraintViolated = "P2002"
+  RecordDoesNotExist = 'P2025',
+  UniqueConstraintViolated = 'P2002',
 }

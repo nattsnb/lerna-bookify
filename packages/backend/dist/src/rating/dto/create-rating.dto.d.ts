@@ -1,5 +1,5 @@
 export declare class CreateRatingDto {
-    score: number;
-    review?: string;
-    reservationId: number;
+  score: number;
+  review?: string;
+  reservationId: number;
 }

@@ -1,2 +1,2 @@
-declare const _default: import("@prisma/config").PrismaConfigInternal<never>;
+declare const _default: import('@prisma/config').PrismaConfigInternal<never>;
 export default _default;

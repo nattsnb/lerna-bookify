@@ -1,2 +1,1 @@
-export declare class VenueModule {
-}
+export declare class VenueModule {}
