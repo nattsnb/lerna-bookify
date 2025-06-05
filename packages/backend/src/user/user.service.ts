@@ -6,7 +6,7 @@ import {
 import { PrismaService } from '../database/prisma.service';
 import { UserDto } from './user.dto';
 import { PrismaError } from '../database/prisma-error.enum';
-import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class UserService {
@@ -44,7 +44,7 @@ export class UserService {
       });
     } catch (error) {
       if (
-        error instanceof PrismaClientKnownRequestError &&
+        error instanceof Prisma.PrismaClientKnownRequestError &&
         error?.code === PrismaError.UniqueConstraintViolated
       ) {
         throw new ConflictException('User with that email already exists');

@@ -1,4 +1,4 @@
-import { Reservation } from '@prisma/client';
+import { Reservation } from '.prisma/client';
 
 export class RatingDto {
   id: number;
