@@ -1,3 +1,5 @@
+import {VenueFilterDto} from "nestjs-bookify/dist/src/venue/dto/venue-filter.dto";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 const getAllVenues = () => {
@@ -16,10 +18,36 @@ const getVenueById = (id) => {
     .catch((err) => console.error("Error fetching venue by ID:", err));
 };
 
-const getFilteredVenues = (amenities = [], occasions = []) => {
+const getFilteredVenues = (filters: VenueFilterDto) => {
   const query = new URLSearchParams();
-  if (amenities.length) query.append("amenities", amenities.join(","));
-  if (occasions.length) query.append("occasions", occasions.join(","));
+
+  if (filters.amenities?.length)
+    query.append("amenities", filters.amenities.join(","));
+  if (filters.occasions?.length)
+    query.append("occasions", filters.occasions.join(","));
+
+  if (filters.venueTypeId != null)
+    query.append("venueTypeId", filters.venueTypeId.toString());
+
+  if (filters.pricePerNightInEURCentMin != null)
+    query.append("pricePerNightInEURCentMin", filters.pricePerNightInEURCentMin.toString());
+  if (filters.pricePerNightInEURCentMax != null)
+    query.append("pricePerNightInEURCentMax", filters.pricePerNightInEURCentMax.toString());
+
+  if (filters.dateStart)
+    query.append("dateStart", filters.dateStart);
+  if (filters.dateEnd)
+    query.append("dateEnd", filters.dateEnd);
+
+  if (filters.guests != null)
+    query.append("guests", filters.guests.toString());
+
+  if (filters.radiusKm != null)
+    query.append("radiusKm", filters.radiusKm.toString());
+  if (filters.latitude != null)
+    query.append("latitude", filters.latitude.toString());
+  if (filters.longitude != null)
+    query.append("longitude", filters.longitude.toString());
 
   return fetch(`${API_URL}/venue/filter?${query.toString()}`, {
     method: "GET",
@@ -27,6 +55,7 @@ const getFilteredVenues = (amenities = [], occasions = []) => {
     .then((res) => res.json())
     .catch((err) => console.error("Error filtering venues:", err));
 };
+
 
 const createVenue = (data, token) => {
   return fetch(`${API_URL}/venue`, {

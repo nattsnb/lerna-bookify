@@ -27,6 +27,7 @@ export class VenueController {
 
   @Get()
   getAll() {
+    console.log('GET /venue called');
     return this.venueService.getAll();
   }
 
