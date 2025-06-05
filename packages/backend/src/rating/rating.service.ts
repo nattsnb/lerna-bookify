@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { CreateRatingDto } from './dto/create-rating.dto';
+import { Prisma } from '@prisma/client';
 import { PrismaError } from '../database/prisma-error.enum';
-import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 @Injectable()
 export class RatingService {
@@ -28,7 +28,7 @@ export class RatingService {
       });
     } catch (error) {
       if (
-        error instanceof PrismaClientKnownRequestError &&
+        error instanceof Prisma.PrismaClientKnownRequestError &&
         error.code === PrismaError.RecordDoesNotExist
       ) {
         throw new NotFoundException('Reservation not found');
@@ -96,7 +96,7 @@ export class RatingService {
       });
     } catch (error) {
       if (
-        error instanceof PrismaClientKnownRequestError &&
+        error instanceof Prisma.PrismaClientKnownRequestError &&
         error.code === PrismaError.RecordDoesNotExist
       ) {
         throw new NotFoundException(`Rating with ID ${ratingId} not found`);
