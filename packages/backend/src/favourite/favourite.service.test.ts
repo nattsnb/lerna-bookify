@@ -2,7 +2,7 @@ import { Test } from '@nestjs/testing';
 import { FavouriteService } from './favourite.service';
 import { PrismaService } from '../database/prisma.service';
 import { NotFoundException } from '@nestjs/common';
-import { Prisma, Favourite } from '@prisma/client';
+import { Prisma, Favourite } from '@bookify/prisma-client';
 import { PrismaError } from '../database/prisma-error.enum';
 
 describe('The FavouriteService', () => {

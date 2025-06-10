@@ -2,7 +2,7 @@ import { Test } from '@nestjs/testing';
 import { RatingService } from './rating.service';
 import { PrismaService } from '../database/prisma.service';
 import { NotFoundException } from '@nestjs/common';
-import { Prisma, Rating } from '@prisma/client';
+import { Prisma, Rating } from '@bookify/prisma-client';
 import { PrismaError } from '../database/prisma-error.enum';
 import { CreateRatingDto } from './dto/create-rating.dto';
 

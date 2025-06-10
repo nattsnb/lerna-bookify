@@ -2,7 +2,7 @@ import { Test } from '@nestjs/testing';
 import { CategoryService } from './category.service';
 import { PrismaService } from '../database/prisma.service';
 import { NotFoundException } from '@nestjs/common';
-import { Prisma, Category, Amenity } from '@prisma/client';
+import { Prisma, Category, Amenity } from '@bookify/prisma-client';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { PrismaError } from '../database/prisma-error.enum';

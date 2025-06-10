@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { CreateVenueTypeDto } from './dto/create-venue-type.dto';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@bookify/prisma-client';
 import { PrismaError } from '../database/prisma-error.enum';
 
 @Injectable()

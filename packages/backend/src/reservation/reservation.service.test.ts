@@ -3,7 +3,7 @@ import { ReservationService } from './reservation.service';
 import { PrismaService } from '../database/prisma.service';
 import { ConflictException, NotFoundException } from '@nestjs/common';
 import { CreateReservationDto } from './dto/create-reservation.dto';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@bookify/prisma-client';
 import { PrismaError } from '../database/prisma-error.enum';
 
 describe('The ReservationService', () => {

@@ -2,7 +2,7 @@ import { Test } from '@nestjs/testing';
 import { VenueService } from './venue.service';
 import { PrismaService } from '../database/prisma.service';
 import { NotFoundException } from '@nestjs/common';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@bookify/prisma-client';
 import { PrismaError } from '../database/prisma-error.enum';
 import { CreateVenueDto } from './dto/create-venue.dto';
 import { UpdateVenueDto } from './dto/update-venue.dto';

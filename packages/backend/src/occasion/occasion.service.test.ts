@@ -2,7 +2,7 @@ import { Test } from '@nestjs/testing';
 import { OccasionService } from './occasion.service';
 import { PrismaService } from '../database/prisma.service';
 import { NotFoundException } from '@nestjs/common';
-import { Prisma, Occasion } from '@prisma/client';
+import { Prisma, Occasion } from '@bookify/prisma-client';
 import { PrismaError } from '../database/prisma-error.enum';
 import { CreateOccasionDto } from './dto/create-occasion.dto';
 import { UpdateOccasionDto } from './dto/update-occasion.dto';

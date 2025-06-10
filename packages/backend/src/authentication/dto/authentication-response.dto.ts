@@ -1,4 +1,4 @@
-import { User } from '@prisma/client';
+import { User } from '@bookify/prisma-client';
 import { Exclude } from 'class-transformer';
 import { TransformPhoneNumberToDisplay } from '../../Utilities/transform-phone-number-to-display';
 import { ApiProperty } from '@nestjs/swagger';
