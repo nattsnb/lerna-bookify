@@ -3,7 +3,7 @@ import { PrismaService } from '../database/prisma.service';
 import { CreateVenueDto } from './dto/create-venue.dto';
 import { UpdateVenueDto } from './dto/update-venue.dto';
 import { PrismaError } from '../database/prisma-error.enum';
-import { Prisma } from '@bookify/prisma-client';
+import { Prisma } from '@prisma/client';
 import { VenueFilterDto } from './dto/venue-filter.dto';
 
 @Injectable()

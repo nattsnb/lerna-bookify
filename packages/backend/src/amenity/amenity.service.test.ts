@@ -4,7 +4,7 @@ import { PrismaService } from '../database/prisma.service';
 import { NotFoundException } from '@nestjs/common';
 import { CreateAmenityDto } from './dto/create-amenity.dto';
 import { UpdateAmenityDto } from './dto/update-amenity.dto';
-import { Amenity, Prisma } from '@bookify/prisma-client';
+import { Amenity, Prisma } from '@prisma/client';
 import { PrismaError } from '../database/prisma-error.enum';
 
 describe('The AmenityService', () => {

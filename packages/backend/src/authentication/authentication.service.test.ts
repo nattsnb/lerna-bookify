@@ -10,7 +10,7 @@ import { LogInDto } from './dto/log-in.dto';
 import { hash } from 'bcrypt';
 import { Response } from 'express';
 import { RequestWithUser } from './request-with-user';
-import { User, Prisma } from '@bookify/prisma-client';
+import { User, Prisma } from '@prisma/client';
 import { PrismaError } from '../database/prisma-error.enum';
 
 describe('The AuthenticationService', () => {

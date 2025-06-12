@@ -2,19 +2,16 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "packages/shared/prisma-client"
+    "packages/*"
   ],
-  "dependencies": {
-    "@prisma/client": "^6.6.0"
-  },
   "devDependencies": {
+    "@prisma/client": "^6.9.0",
     "lerna": "^8.2.2",
-    "prisma": "^6.7.0",
-    "@prisma/client": "^6.6.0"
+    "prisma": "^6.7.0"
   },
   "scripts": {
     "build-prisma": "prisma generate --schema packages/backend/prisma/schema",
+    "serve:backend": "nest start --path ./packages/backend/tsconfig.json --sourceRoot ./packages/backend",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream"
   }

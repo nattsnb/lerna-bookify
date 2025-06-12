@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { CreateAmenityDto } from './dto/create-amenity.dto';
 import { UpdateAmenityDto } from './dto/update-amenity.dto';
-import { Prisma } from '@bookify/prisma-client';
+import { Prisma } from '@prisma/client';
 import { PrismaError } from '../database/prisma-error.enum';
 
 @Injectable()

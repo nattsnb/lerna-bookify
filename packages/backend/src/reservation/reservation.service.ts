@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { CreateReservationDto } from './dto/create-reservation.dto';
-import { Prisma } from '@bookify/prisma-client';
+import { Prisma } from '@prisma/client';
 import { PrismaError } from '../database/prisma-error.enum';
 import * as dayjs from 'dayjs';
 

@@ -6,7 +6,7 @@ import {
 import { PrismaService } from '../database/prisma.service';
 import { UserDto } from './user.dto';
 import { PrismaError } from '../database/prisma-error.enum';
-import { Prisma } from '@bookify/prisma-client';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class UserService {
