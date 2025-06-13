@@ -10,7 +10,7 @@
     "prisma": "^6.7.0"
   },
   "scripts": {
-    "build-prisma": "prisma generate --schema packages/backend/prisma/schema",
+    "build-prisma": "prisma generate --schema packages/backend/prisma/schema.prisma",
     "serve:backend": "nest start --path ./packages/backend/tsconfig.json --sourceRoot ./packages/backend",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream"
